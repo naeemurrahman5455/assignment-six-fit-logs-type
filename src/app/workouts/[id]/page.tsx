@@ -221,16 +221,6 @@ export default async function WorkoutsDetailsPage({
         </div>
       </div>
 
-      {/* Bottom Footer */}
-      <footer className="w-full border-t border-neutral-800/80 bg-[#0c0d10] py-6 px-6 mt-12">
-        <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <div className="flex items-center gap-2 font-black tracking-wider text-white">
-            <Dumbbell className="h-4 w-4 text-[#ccff00]" />
-            <span>FITLOG</span>
-          </div>
-          <p>© 2026 FitLog — Workout Library. Train hard, log honest.</p>
-        </div>
-      </footer>
     </div>
   );
 }
