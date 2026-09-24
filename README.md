@@ -143,10 +143,13 @@ next.config.ts
 
 
 ## 📄 Main Routes
+```text
+
 / — Home page and workout library
 /workouts/[id] — Individual workout details
 /my-plan — Today's workout plan and saved workouts
 
+```
 
 
 
