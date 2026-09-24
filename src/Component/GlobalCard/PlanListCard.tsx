@@ -106,7 +106,7 @@ export default function PlanListCard({
                     type="button"
                     onClick={() => {
                       onMarkAsDone?.(workout.id);
-                      toast.success("Great job! Workout completed.");
+                      toast.success("Great job! Workout completed..");
                     }}
                     className="cursor-pointer flex items-center gap-2 rounded-xl bg-[#C2F800] px-4 py-2.5 text-xs font-black uppercase tracking-wider text-black shadow-md transition-colors hover:bg-[#B3E600]"
                   >
