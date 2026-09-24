@@ -3,6 +3,8 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/Component/Navbar";
+import WorkoutContextProvider from "@/context/WorkoutContext";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,9 +33,19 @@ export default function RootLayout({
       className={`${inter.variable} ${oswald.variable}`}
     >
       <body className=" bg-[#0C0D10] font-[family-name:var(--font-inter)] text-white antialiased">
+
+
+        <WorkoutContextProvider>
+
         <Navbar />
 
         {children}
+
+         <ToastContainer />
+        </WorkoutContextProvider>
+
+
+
       </body>
     </html>
   );

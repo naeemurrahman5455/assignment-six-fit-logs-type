@@ -1,80 +1,9 @@
-// import Image from "next/image";
-// import React from "react";
-
-// interface WorkoutsDetailsPageProps {
-//   params: Promise<{ id: string }>;
-// }
-
-// const getLibrary = async (): Promise<Workout[]> => {
-//   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
-
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch workout library");
-//   }
-
-//   const data: Workout[] = await res.json();
-
-//   return data;
-// };
-
-// const WorkoutsDetailsPage = async ({ params }: WorkoutsDetailsPageProps) => {
-//   const { id } = await params;
-
-//   const WorkoutData = await getLibrary();
-//   const works = WorkoutData.find((works1: Workout) => works1.id === Number(id)) as Workout;
-
-//   return (
-// <div className="container mx-auto">
-//         <div className="card lg:card-side  shadow-sm">
-//       <figure>
-
-//         <Image src={works.image} width={350} height={800}></Image>
-
-//       </figure>
-//       <div className="card-body">
-//         <h2 className="card-title">{works.name}</h2>
-//         <p>Click the button to listen on Spotiwhy app.</p>
-//         <div className="card-actions justify-end">
-//           <button className="btn btn-primary">Listen</button>
-//         </div>
-//       </div>
-//     </div>
-// </div>
-//   );
-// };
-// export default WorkoutsDetailsPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import Image from "next/image";
 import React from "react";
 import { CalendarDays, Bookmark, Dumbbell } from "lucide-react";
 import { Workout } from "@/type/fitlogType";
+import TodayPlanButton from "@/Component/ButtonsComponent/todayPlanButton";
+import SavePlanButton from "@/Component/ButtonsComponent/savePlanButton";
 
 
 interface WorkoutsDetailsPageProps {
@@ -207,14 +136,10 @@ export default async function WorkoutsDetailsPage({
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-4">
-              <button className="flex items-center gap-2 rounded-xl bg-[#ccff00] px-5 py-3 text-xs font-black uppercase tracking-wider text-black hover:bg-[#b3e600] transition-colors shadow-lg">
-                <CalendarDays className="h-4 w-4" />
-                Add to today&apos;s plan
-              </button>
-              <button className="flex items-center gap-2 rounded-xl border border-neutral-700 bg-transparent px-5 py-3 text-xs font-black uppercase tracking-wider text-zinc-300 hover:border-zinc-500 hover:text-white transition-colors">
-                <Bookmark className="h-4 w-4" />
-                Save for later
-              </button>
+
+                  <TodayPlanButton workout={workout}></TodayPlanButton>
+
+                  <SavePlanButton workout={workout}></SavePlanButton>
             </div>
 
           </div>
