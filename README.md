@@ -87,23 +87,21 @@ The main goals of FitLog are to provide:
 - Clean and reusable code architecture
 
 ## Project Structure
+```text 
 src/
 ├── app/
 │   ├── layout.tsx
 │   ├── page.tsx
 │   ├── loading.tsx
 │   ├── not-found.tsx
-│   │
 │   ├── my-plan/
 │   │   └── page.tsx
-│   │
 │   └── workouts/
 │       └── [id]/
 │           ├── page.tsx
 │           └── loading.tsx
 │
 ├── components/
-│   │
 │   ├── ButtonsComponent/
 │   │   ├── TodayPlanButton.tsx
 │   │   └── SavePlanButton.tsx
@@ -133,14 +131,16 @@ src/
 │
 └── type/
     └── fitlogType.ts
-
+│
 public/
 └── images/
-
+│
 README.md
 package.json
 tsconfig.json
 next.config.ts
+```
+
 
 ## 📄 Main Routes
 / — Home page and workout library
