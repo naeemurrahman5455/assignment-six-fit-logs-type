@@ -86,7 +86,7 @@ The main goals of FitLog are to provide:
 - Responsive and accessible UI
 - Clean and reusable code architecture
 
-## Project Structure
+## 📂 Project Structure
 ```text 
 src/
 ├── app/
