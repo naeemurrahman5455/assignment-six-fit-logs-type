@@ -28,7 +28,7 @@ const TodayPlanButton = ({
       window.alert("Item already added");
       return;
     }
-     toast.success("Saved For Later")
+     toast.success("Added to Today's Plan")
 
     setTodayPlan((prev) => [
       ...prev,

@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/Component/Navbar";
 import WorkoutContextProvider from "@/context/WorkoutContext";
 import { ToastContainer } from "react-toastify";
+import Footer from "@/Component/Home/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,24 +29,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${oswald.variable}`}
-    >
+    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body className=" bg-[#0C0D10] font-[family-name:var(--font-inter)] text-white antialiased">
-
-
         <WorkoutContextProvider>
+          <Navbar />
 
-        <Navbar />
+          {children}
+          <Footer></Footer>
 
-        {children}
-
-         <ToastContainer />
+          <ToastContainer />
         </WorkoutContextProvider>
-
-
-
       </body>
     </html>
   );

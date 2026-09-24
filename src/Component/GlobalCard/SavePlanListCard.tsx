@@ -1,26 +1,18 @@
-
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Clock,
-  Flame,
-  Star,
-  X,
-} from "lucide-react";
+import { Clock, Flame, Star, X } from "lucide-react";
 
 import type { Workout } from "@/type/fitlogType";
+import { toast } from "react-toastify";
 
 interface SavePlanListCardProps {
   workouts: Workout[];
   onRemove?: (id: number) => void;
 }
 
-const SavePlanListCard = ({
-  workouts,
-  onRemove,
-}: SavePlanListCardProps) => {
+const SavePlanListCard = ({ workouts, onRemove }: SavePlanListCardProps) => {
   return (
     <div className="w-full">
       <div className="w-full">
@@ -78,9 +70,7 @@ const SavePlanListCard = ({
                       {/* Calories */}
                       <div className="flex items-center gap-1.5">
                         <Flame className="h-3.5 w-3.5 text-zinc-500" />
-                        <span>
-                          {workout.caloriesBurned} kcal
-                        </span>
+                        <span>{workout.caloriesBurned} kcal</span>
                       </div>
 
                       {/* Rating */}
@@ -105,11 +95,13 @@ const SavePlanListCard = ({
                   </Link>
 
                   {/* Remove */}
+
                   <button
                     type="button"
-                    onClick={() =>
-                      onRemove?.(workout.id)
-                    }
+                    onClick={() => {
+                      onRemove?.(workout.id);
+                      toast.success("Removed from Saved plan.");
+                    }}
                     className="cursor-pointer rounded-lg p-2 text-zinc-500 transition-colors hover:bg-neutral-800/50 hover:text-zinc-300"
                     aria-label={`Remove ${workout.name}`}
                   >
@@ -132,4 +124,3 @@ const SavePlanListCard = ({
 };
 
 export default SavePlanListCard;
-
