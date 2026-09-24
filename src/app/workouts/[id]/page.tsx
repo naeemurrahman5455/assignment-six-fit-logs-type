@@ -47,7 +47,7 @@ export default async function WorkoutsDetailsPage({
         {/* Added items-stretch to match heights */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
-          {/* Left Column: Image Showcase (h-full makes it match the right side height) */}
+
           <div className="lg:col-span-5 relative h-[380px] lg:h-full min-h-[450px] w-full overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800/80 shadow-2xl">
             <Image
               src={workout.image}
